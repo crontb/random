@@ -18,7 +18,6 @@ func TestCard(t *testing.T) {
 	}{
 		{"Case 1", "/card", http.MethodOptions, http.StatusOK},
 		{"Case 2", "/card", http.MethodGet, http.StatusOK},
-		{"Case 3", "/card", http.MethodPost, http.StatusOK},
 	}
 
 	for _, tt := range tests {
