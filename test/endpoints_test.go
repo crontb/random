@@ -29,7 +29,7 @@ func TestCard(t *testing.T) {
 
 			recorder := httptest.NewRecorder()
 			router := mux.NewRouter()
-			router.HandleFunc("/card", handler.Card)
+			router.HandleFunc(tt.route, handler.Card)
 			router.ServeHTTP(recorder, req)
 
 			if recorder.Code != tt.wantStatus {
