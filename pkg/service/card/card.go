@@ -22,11 +22,8 @@ func GenerateNumbers(totalNumbers int, maxNumber int) ([]int, error) {
 		}(ch)
 	}
 
-	for i := 0; i < totalNumbers; {
-		select {
-		case result[i] = <-ch:
-			i++
-		}
+	for i := 0; i < totalNumbers; i++ {
+		result[i] = <-ch
 	}
 	close(ch)
 
